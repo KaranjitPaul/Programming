@@ -4,6 +4,7 @@ These notes follow the C programs I have written so far:
 
 - [01helloWorld.c](01helloWorld.c)
 - [02variable.c](02variable.c)
+- [03dataTypes.c](03dataTypes.c)
 
 They explain the ideas used in those programs without moving ahead of the code.
 
@@ -195,6 +196,55 @@ char c = 'e';
 ```
 
 A single character uses single quotes.
+
+## Main Data Type Categories
+
+`03dataTypes.c` demonstrates the main categories of C data types.
+
+### Basic Types
+
+Basic types directly store values:
+
+- Integer types such as `char`, `short`, `int`, `long`, and `long long`
+- Unsigned versions of integer types, which store zero and positive values
+- Floating-point types: `float`, `double`, and `long double`
+- `_Bool`, also available as `bool` after including `stdbool.h`
+
+### Derived Types
+
+Derived types are built from other types:
+
+- Arrays
+- Pointers
+- Function types
+
+### User-Defined Types
+
+C also allows us to define types using:
+
+- `struct`
+- `union`
+- `enum`
+
+### `void`
+
+`void` means that no value or type is present in that place. For example, `greet(void)` receives no arguments and returns no value.
+
+Standard C does not allow `sizeof(void)` or `sizeof` on a function type.
+
+## Checking Types And Sizes
+
+`sizeof` reports how many bytes a variable or type uses on the current system:
+
+```c
+sizeof(integer_number)
+```
+
+The result of `sizeof` has the type `size_t`, which is declared by standard headers such as `stddef.h`.
+
+The size of a C type can differ between compilers and computers, so it is better to check instead of assuming.
+
+`_Generic` is a C11 feature that can choose an expression based on a value's type while the code is being compiled. `03dataTypes.c` uses it to display the detected type name.
 
 ## Single Quotes And Double Quotes
 
