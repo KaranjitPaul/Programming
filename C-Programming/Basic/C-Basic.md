@@ -7,6 +7,7 @@ These notes follow the C programs I have written so far:
 - [03dataTypes.c](03dataTypes.c)
 - [04constants.c](04constants.c)
 - [05input.c](05input.c)
+- [06escapeSequence.c](06escapeSequence.c)
 
 They explain the ideas used in those programs without moving ahead of the code.
 
@@ -483,6 +484,14 @@ printf("He said, \"Hello\".\n");
 ```
 
 The backslash changes how C understands the character that follows it.
+
+The null character `\0` marks the end of a C string. If `printf` reaches `\0`, it stops printing the string:
+
+```c
+printf("Hello\0World");
+```
+
+Only `Hello` is printed because `\0` appears before `World`.
 
 ## Constants
 
