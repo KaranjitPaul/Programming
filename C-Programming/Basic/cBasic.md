@@ -360,6 +360,27 @@ Unlike a normal declaration:
 - `#define` does not end with a semicolon.
 - A simple `#define` constant does not have a C data type.
 
+### `const` And `#define` Difference
+
+Both can give a name to a value that should not change, but they work differently:
+
+| `const` | `#define` |
+| --- | --- |
+| Creates a real, read-only C variable | Creates a preprocessor replacement |
+| Has a data type | Does not have a C data type |
+| Uses normal declaration syntax | Does not use `=` or a semicolon |
+| Follows normal variable scope rules | Remains available until it is undefined or the file ends |
+| Is checked by the compiler like a variable | Is replaced before normal compilation |
+
+Example:
+
+```c
+const int DAYS_IN_WEEK = 7;
+#define MAX_SCORE 100
+```
+
+For most normal fixed values, prefer `const` because it has a type and follows normal C rules. Use `#define` when a preprocessor replacement is specifically useful.
+
 ### Naming Constants
 
 Uppercase names are commonly used for constants:
@@ -391,6 +412,59 @@ For example, `age`, `student_age`, and `score2` are valid names.
 `score` and `Score` are treated as different names.
 
 Meaningful names are usually better than single-letter names once a program becomes larger.
+
+## C Keywords
+
+Keywords are words reserved by the C language. They have special meanings and cannot be used as names for variables or other identifiers.
+
+The following is the complete C11 keyword set, matching the C11 mode currently used to compile these programs. Many are advanced topics and are included here only as a reference for now.
+
+- `auto` - Gives a local variable automatic storage duration. This is already the default for normal local variables, so it is rarely written.
+- `break` - Immediately exits the nearest loop or `switch` statement.
+- `case` - Defines one possible matching value inside a `switch` statement.
+- `char` - Declares a character or small integer type.
+- `const` - Marks an object as read-only through that name after initialization.
+- `continue` - Skips the remaining code in the current loop iteration and starts the next iteration.
+- `default` - Defines the fallback branch inside a `switch` when no `case` matches.
+- `do` - Starts a `do...while` loop, which runs its body at least once.
+- `double` - Declares a double-precision floating-point type.
+- `else` - Provides the alternative branch of an `if` statement.
+- `enum` - Defines a type containing named integer constants.
+- `extern` - Declares that a variable or function is defined elsewhere.
+- `float` - Declares a single-precision floating-point type.
+- `for` - Creates a loop with initialization, condition, and update parts.
+- `goto` - Jumps directly to a labeled statement inside the same function.
+- `if` - Runs code only when a condition is true.
+- `inline` - Suggests that a function may be expanded at its call location. The compiler decides whether to do so.
+- `int` - Declares an integer type.
+- `long` - Modifies an integer or floating-point type to support a longer range or precision.
+- `register` - Suggests that a variable will be used frequently. Modern compilers usually make this decision themselves.
+- `restrict` - Promises that a pointer is the main way used to access an object during a section of code.
+- `return` - Ends a function and optionally sends a value back to its caller.
+- `short` - Modifies an integer type to use a range no greater than `int`.
+- `signed` - Declares an integer type that can represent negative and positive values.
+- `sizeof` - Produces the size of a type or object in bytes.
+- `static` - Gives different storage or visibility behavior depending on where it is used.
+- `struct` - Groups multiple related values into one user-defined type.
+- `switch` - Selects one branch from multiple `case` values.
+- `typedef` - Creates another name for an existing type.
+- `union` - Groups members that share the same memory location.
+- `unsigned` - Declares an integer type that represents zero and positive values.
+- `void` - Represents no value or no function parameters.
+- `volatile` - Tells the compiler that a value may change unexpectedly and must be read when requested.
+- `while` - Repeats code while a condition remains true.
+- `_Alignas` - Requests a specific memory alignment for an object.
+- `_Alignof` - Produces the alignment requirement of a type.
+- `_Atomic` - Declares an atomic type or atomic-qualified object for safer shared access.
+- `_Bool` - Declares C's built-in boolean integer type.
+- `_Complex` - Declares a complex-number type.
+- `_Generic` - Selects an expression based on the type of another expression.
+- `_Imaginary` - Refers to optional imaginary-number types supported by some C implementations.
+- `_Noreturn` - Marks a function that never returns to its caller.
+- `_Static_assert` - Checks a condition while the program is being compiled.
+- `_Thread_local` - Gives each thread its own copy of a variable.
+
+`#include` and `#define` are not C keywords. They are preprocessor directives handled before normal compilation.
 
 ## Comments
 
