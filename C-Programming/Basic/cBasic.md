@@ -209,13 +209,9 @@ A single character uses single quotes.
 | `double` | Stores a decimal number with more precision than `float` |
 | `void` | Represents no value |
 
-`void` can be used when a function does not return a value:
+For now, `void` can be seen inside `main(void)`. The `void` between the brackets means that `main` is not receiving any values.
 
-```c
-void show_message(void) {
-    printf("Hello");
-}
-```
+Functions and other uses of `void` can be studied later.
 
 ## Checking Types And Sizes
 
