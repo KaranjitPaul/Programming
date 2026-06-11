@@ -221,6 +221,19 @@ Functions and other uses of `void` can be studied later.
 sizeof(int)
 ```
 
+`sizeof` returns a value with the type `size_t`.
+
+`size_t` is an unsigned integer type made for representing sizes and counts. Its actual underlying type can differ between computers and compilers.
+
+Because `sizeof` returns `size_t`, `%zu` should be used when printing its result:
+
+```c
+printf("int takes %zu bytes\n", sizeof(int));
+```
+
+- `z` tells `printf` that the value has the type `size_t`.
+- `u` tells `printf` to display it as an unsigned whole number.
+
 The size of a C type can differ between compilers and computers, so it is better to check instead of assuming.
 
 `void` has no value, so `sizeof(void)` is not allowed in standard C.
@@ -249,7 +262,7 @@ char letter = "e";
 
 ## Format Specifiers
 
-Format specifiers tell `printf` what type of value to print.
+Format specifiers are placeholders inside a `printf` format string. They tell `printf` how to understand and display the values provided after the string.
 
 ```c
 printf("Integer: %d\n", a);
@@ -265,8 +278,58 @@ The format specifiers used so far are:
 | `%f` | A floating-point number |
 | `%.1f` | A floating-point number shown with one digit after the decimal point |
 | `%c` | One character |
+| `%s` | A string |
+| `%zu` | A `size_t` value, such as the result of `sizeof` |
+| `%%` | Prints the `%` symbol |
 
 The value after the comma replaces the matching format specifier in the output.
+
+```c
+int age = 20;
+printf("Age: %d\n", age);
+```
+
+Here, `%d` is replaced by the value stored in `age`.
+
+The format specifier must match the value being printed. Using the wrong one can print incorrect output or cause undefined behavior.
+
+```c
+printf("%d", age); // Correct because age is an int
+printf("%f", age); // Incorrect because %f does not expect an int
+```
+
+## Escape Sequences
+
+Escape sequences begin with a backslash and represent special characters inside strings.
+
+| Escape Sequence | Meaning |
+| --- | --- |
+| `\n` | Starts a new line |
+| `\t` | Adds a horizontal tab |
+| `\"` | Adds a double quote inside a string |
+| `\\` | Adds a backslash |
+| `\0` | Represents the null character |
+
+Using `\n`:
+
+```c
+printf("Hello\nWorld");
+```
+
+Output:
+
+```text
+Hello
+World
+```
+
+Using quotes inside a string:
+
+```c
+printf("He said, \"Hello\".\n");
+```
+
+The backslash changes how C understands the character that follows it.
 
 ## Naming Variables
 

@@ -6,7 +6,7 @@ int main(void) {
     float decimal_number = 2.5f; // Stores a decimal number
     double precise_number = 2.5; // Stores a decimal with more precision
 
-    printf("VALUES\n");
+    printf("VALUES\n"); // '\n' means new line
     printf("------\n");
     printf("char: %c\n", character);
     printf("int: %d\n", whole_number);
@@ -15,10 +15,11 @@ int main(void) {
 
     printf("\nSIZES\n");
     printf("-----\n");
-    printf("char takes %d byte(s)\n", (int)sizeof(char));
-    printf("int takes %d byte(s)\n", (int)sizeof(int));
-    printf("float takes %d byte(s)\n", (int)sizeof(float));
-    printf("double takes %d byte(s)\n", (int)sizeof(double));
+    // sizeof returns size_t, so %zu is used to print the result.
+    printf("char takes %zu byte(s)\n", sizeof(char));
+    printf("int takes %zu byte(s)\n", sizeof(int));
+    printf("float takes %zu byte(s)\n", sizeof(float));
+    printf("double takes %zu byte(s)\n", sizeof(double));
 
     // void has no value, so its size cannot be checked using sizeof.
     printf("\nThese sizes can change depending on the computer and compiler.\n");
