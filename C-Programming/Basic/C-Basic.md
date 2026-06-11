@@ -37,14 +37,107 @@ Many later languages borrowed C's syntax, so learning C also makes parts of lang
 
 A C source file usually ends with `.c`.
 
-Writing the source file is only the first step. Before the computer can run it, the code goes through a few stages:
-
-1. **Preprocessing** handles instructions that begin with `#`, such as `#include`.
-2. **Compilation** translates the C code into lower-level code and checks for many errors.
-3. **Linking** connects the compiled code with required library code.
-4. **Running** starts the finished executable program.
+Writing the source file is only the first step. The computer cannot directly run C source code. It must first be translated into an executable program.
 
 The compiler used for the current programs is GCC.
+
+### What Is A Compiler?
+
+A compiler is a program that translates source code written by humans into lower-level instructions that a computer can use.
+
+While translating the code, the compiler also checks for many mistakes, such as:
+
+- Incorrect syntax
+- Using undeclared variables
+- Passing the wrong kinds of values
+- Other problems that can produce warnings or errors
+
+An **error** usually stops the executable from being created. A **warning** means the compiler found something suspicious, but it may still create the executable.
+
+### Compilation Process
+
+When GCC builds a C program, the source code passes through these main stages:
+
+1. **Preprocessing**
+   - Handles directives beginning with `#`.
+   - Includes header-file content and replaces simple `#define` names.
+   - Produces expanded C source code.
+
+2. **Compilation**
+   - Checks the preprocessed C code.
+   - Translates it into assembly language, which is closer to machine instructions.
+
+3. **Assembly**
+   - Translates the assembly code into machine-code instructions.
+   - Produces an object file, commonly ending with `.o`.
+
+4. **Linking**
+   - Combines object files with required library code.
+   - Connects calls such as `printf` to their implementations.
+   - Produces the final executable file, such as an `.exe` file on Windows.
+
+5. **Running**
+   - The operating system loads the executable into memory.
+   - The computer's CPU executes the program's machine instructions.
+   - For the current programs, execution begins from `main`.
+
+A simple view of the process:
+
+```text
+Source code (.c)
+    -> Preprocessor
+    -> Compiler
+    -> Assembler
+    -> Linker
+    -> Executable (.exe)
+    -> Running program
+```
+
+### Does The Compiler Execute Code Line By Line?
+
+No. The compiler does not normally execute the C source code one line at a time.
+
+The compiler reads and translates the program before it runs. It may process different parts in multiple stages and can even rearrange or optimize instructions while keeping the program's required behavior.
+
+After compilation and linking, the finished executable is run. The CPU executes machine instructions, not the original C lines.
+
+Inside a simple `main` function, statements usually appear to run from top to bottom:
+
+```c
+printf("First\n");
+printf("Second\n");
+```
+
+Output:
+
+```text
+First
+Second
+```
+
+Later, conditions, loops, and function calls can change which statements run and in what order.
+
+### Basic GCC Commands
+
+Compile a C source file into an executable:
+
+```powershell
+gcc 01helloWorld.c -o hello.exe
+```
+
+Run the executable in PowerShell:
+
+```powershell
+.\hello.exe
+```
+
+Compile while asking GCC to show useful warnings:
+
+```powershell
+gcc -Wall -Wextra -pedantic 01helloWorld.c -o hello.exe
+```
+
+Warnings are useful because a program can compile and run while still containing mistakes.
 
 ## Preprocessor Directives
 
