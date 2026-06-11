@@ -6,6 +6,7 @@ These notes follow the C programs I have written so far:
 - [02variable.c](02variable.c)
 - [03dataTypes.c](03dataTypes.c)
 - [04constants.c](04constants.c)
+- [05input.c](05input.c)
 
 They explain the ideas used in those programs without moving ahead of the code.
 
@@ -217,6 +218,68 @@ The text between double quotes is a string literal.
 `\n` is a newline escape sequence. It moves the next output to a new line.
 
 Because `printf` is declared in `stdio.h`, the program includes that header before using the function.
+
+## Taking Input With `scanf`
+
+`scanf` reads formatted input entered by the user.
+
+```c
+int age;
+
+printf("Enter your age: ");
+scanf("%d", &age);
+```
+
+In this example:
+
+- `%d` tells `scanf` to read an integer.
+- `&age` tells `scanf` where the entered integer should be stored.
+- After the input is stored, the program can use the value inside `age`.
+
+`scanf` is declared in `stdio.h`, just like `printf`.
+
+### Why Is `&` Used?
+
+The `&` symbol placed before a variable means **address of**.
+
+```c
+&age
+```
+
+A variable stores a value somewhere in the computer's memory. `&age` gives the memory address of the place where `age` is stored.
+
+`scanf` needs this address because it must place the user's input into the variable:
+
+```c
+scanf("%d", &age);
+```
+
+For now, remember:
+
+- `age` means the value stored in the variable.
+- `&age` means the address where that variable is stored.
+- `printf` normally uses the value, such as `age`.
+- `scanf` normally needs the address, such as `&age`, so it can change the variable's value.
+
+The `&` symbol is connected to pointers, but pointers can be studied properly later.
+
+### Matching Input Format Specifiers
+
+The format specifier given to `scanf` must match the variable's data type.
+
+| Data Type | `scanf` Specifier | Example |
+| --- | --- | --- |
+| `int` | `%d` | `scanf("%d", &age);` |
+| `float` | `%f` | `scanf("%f", &height);` |
+| `double` | `%lf` | `scanf("%lf", &price);` |
+| `char` | `%c` | `scanf(" %c", &grade);` |
+
+There is a small but important difference between `printf` and `scanf` for `double`:
+
+- `printf` uses `%f` to print a `double`.
+- `scanf` uses `%lf` to read a `double`.
+
+The space before `%c` in `scanf(" %c", &grade)` tells `scanf` to skip leftover spaces or newlines before reading the character.
 
 ## Variables
 
@@ -624,4 +687,5 @@ Returning `0` tells the operating system that the program finished successfully.
 - Single quotes are for one character; double quotes are for strings.
 - Format specifiers must match the values being printed.
 - `const` and `#define` can give meaningful names to values that should not change.
+- `scanf` reads input, and `&variable` gives it the address where the input should be stored.
 - Compiler warnings can reveal mistakes even when a program still runs.
