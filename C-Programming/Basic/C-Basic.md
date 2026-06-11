@@ -417,7 +417,9 @@ For beginner programs:
 
 Keywords are words reserved by the C language. They have special meanings and cannot be used as names for variables or other identifiers.
 
-The following is the complete C11 keyword set, matching the C11 mode currently used to compile these programs. Many are advanced topics and are included here only as a reference for now.
+### Standard 32 C Keywords
+
+These are the 32 keywords commonly taught as the standard C keyword list. Some belong to topics that will be learned later.
 
 - `auto` - Gives a local variable automatic storage duration. This is already the default for normal local variables, so it is rarely written.
 - `break` - Immediately exits the nearest loop or `switch` statement.
@@ -435,11 +437,9 @@ The following is the complete C11 keyword set, matching the C11 mode currently u
 - `for` - Creates a loop with initialization, condition, and update parts.
 - `goto` - Jumps directly to a labeled statement inside the same function.
 - `if` - Runs code only when a condition is true.
-- `inline` - Suggests that a function may be expanded at its call location. The compiler decides whether to do so.
 - `int` - Declares an integer type.
 - `long` - Modifies an integer or floating-point type to support a longer range or precision.
 - `register` - Suggests that a variable will be used frequently. Modern compilers usually make this decision themselves.
-- `restrict` - Promises that a pointer is the main way used to access an object during a section of code.
 - `return` - Ends a function and optionally sends a value back to its caller.
 - `short` - Modifies an integer type to use a range no greater than `int`.
 - `signed` - Declares an integer type that can represent negative and positive values.
@@ -453,28 +453,61 @@ The following is the complete C11 keyword set, matching the C11 mode currently u
 - `void` - Represents no value or no function parameters.
 - `volatile` - Tells the compiler that a value may change unexpectedly and must be read when requested.
 - `while` - Repeats code while a condition remains true.
-- `_Alignas` - Requests a specific memory alignment for an object.
-- `_Alignof` - Produces the alignment requirement of a type.
-- `_Atomic` - Declares an atomic type or atomic-qualified object for safer shared access.
-- `_Bool` - Declares C's built-in boolean integer type.
-- `_Complex` - Declares a complex-number type.
-- `_Generic` - Selects an expression based on the type of another expression.
-- `_Imaginary` - Refers to optional imaginary-number types supported by some C implementations.
-- `_Noreturn` - Marks a function that never returns to its caller.
-- `_Static_assert` - Checks a condition while the program is being compiled.
-- `_Thread_local` - Gives each thread its own copy of a variable.
 
 `#include` and `#define` are not C keywords. They are preprocessor directives handled before normal compilation.
+
+### Keywords Added In Later C Versions
+
+Later versions of C added more keywords. These are only listed for awareness and do not need to be learned yet.
+
+**Added in C99:**
+
+- `inline`
+- `restrict`
+- `_Bool`
+- `_Complex`
+- `_Imaginary`
+
+**Added in C11:**
+
+- `_Alignas`
+- `_Alignof`
+- `_Atomic`
+- `_Generic`
+- `_Noreturn`
+- `_Static_assert`
+- `_Thread_local`
 
 ## Comments
 
 Comments explain code and are ignored by the compiler.
 
-A single-line comment begins with `//`:
+### Single-Line Comments
+
+A single-line comment begins with `//` and continues until the line ends:
 
 ```c
 // This is a comment
 ```
+
+### Multi-Line Comments
+
+A multi-line or block comment begins with `/*` and ends with `*/`:
+
+```c
+/*
+This comment can continue
+across multiple lines.
+*/
+```
+
+It can also be written on one line:
+
+```c
+/* This is also a block comment. */
+```
+
+Block comments cannot be placed inside other block comments.
 
 Comments are useful when they explain why something is done or clarify a new idea. They do not need to repeat every obvious line.
 
