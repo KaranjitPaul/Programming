@@ -168,6 +168,21 @@ Declaration with initialization:
 int a = 6;
 ```
 
+## Naming Variables
+
+Variable names in C:
+
+- Can contain letters, digits, and underscores
+- Cannot begin with a digit
+- Cannot be a C keyword
+- Are case-sensitive
+
+For example, `age`, `student_age`, and `score2` are valid names.
+
+`score` and `Score` are treated as different names.
+
+Meaningful names are usually better than single-letter names once a program becomes larger.
+
 ## Basic Data Types
 
 `03dataTypes.c` demonstrates the basic C data types learned so far:
@@ -397,21 +412,6 @@ For beginner programs:
 - Use `const` when creating a typed value that should not change.
 - Use simple `#define` constants when learning how named values can be created by the preprocessor.
 - Avoid replacing clear one-time values with constants when a name would not improve the code.
-
-## Naming Variables
-
-Variable names in C:
-
-- Can contain letters, digits, and underscores
-- Cannot begin with a digit
-- Cannot be a C keyword
-- Are case-sensitive
-
-For example, `age`, `student_age`, and `score2` are valid names.
-
-`score` and `Score` are treated as different names.
-
-Meaningful names are usually better than single-letter names once a program becomes larger.
 
 ## C Keywords
 
