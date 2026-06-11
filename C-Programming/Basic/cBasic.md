@@ -5,6 +5,7 @@ These notes follow the C programs I have written so far:
 - [01helloWorld.c](01helloWorld.c)
 - [02variable.c](02variable.c)
 - [03dataTypes.c](03dataTypes.c)
+- [04constants.c](04constants.c)
 
 They explain the ideas used in those programs without moving ahead of the code.
 
@@ -167,36 +168,6 @@ Declaration with initialization:
 int a = 6;
 ```
 
-## Basic Data Types Used So Far
-
-### `int`
-
-`int` stores whole numbers.
-
-```c
-int a = 6;
-```
-
-### `float`
-
-`float` stores numbers with a fractional part.
-
-```c
-float b = 2.5f;
-```
-
-The `f` suffix marks `2.5f` as a `float` literal.
-
-### `char`
-
-`char` stores one character.
-
-```c
-char c = 'e';
-```
-
-A single character uses single quotes.
-
 ## Basic Data Types
 
 `03dataTypes.c` demonstrates the basic C data types learned so far:
@@ -208,6 +179,17 @@ A single character uses single quotes.
 | `float` | Stores a decimal number |
 | `double` | Stores a decimal number with more precision than `float` |
 | `void` | Represents no value |
+
+Examples:
+
+```c
+int whole_number = 25;
+float decimal_number = 2.5f;
+double precise_number = 2.5;
+char character = 'C';
+```
+
+The `f` suffix marks `2.5f` as a `float` literal. Without `f`, a decimal literal such as `2.5` is a `double` by default.
 
 For now, `void` can be seen inside `main(void)`. The `void` between the brackets means that `main` is not receiving any values.
 
@@ -331,6 +313,70 @@ printf("He said, \"Hello\".\n");
 
 The backslash changes how C understands the character that follows it.
 
+## Constants
+
+A constant is a value that should not change while the program runs.
+
+The programs already contain literal constants:
+
+```c
+25
+2.5f
+'C'
+"Hello World"
+```
+
+These values are written directly in the code.
+
+### Using `const`
+
+The `const` keyword makes a variable read-only after it is initialized:
+
+```c
+const int DAYS_IN_WEEK = 7;
+```
+
+Trying to assign another value later causes a compiler error:
+
+```c
+DAYS_IN_WEEK = 8; // Error
+```
+
+The type is still written normally. For example, `const int` stores an integer and `const float` stores a floating-point value.
+
+### Using `#define`
+
+`#define` creates a named value during preprocessing:
+
+```c
+#define MAX_SCORE 100
+```
+
+The preprocessor replaces `MAX_SCORE` with `100` before compilation.
+
+Unlike a normal declaration:
+
+- `#define` does not use `=`.
+- `#define` does not end with a semicolon.
+- A simple `#define` constant does not have a C data type.
+
+### Naming Constants
+
+Uppercase names are commonly used for constants:
+
+```c
+const float PI = 3.14159f;
+#define MAX_SCORE 100
+```
+
+Uppercase is a naming convention, not a rule enforced by C. It helps constants stand out from normal variables.
+
+For beginner programs:
+
+- Use `const` when creating a typed value that should not change.
+- Use simple `#define` constants when learning how named values can be created by the preprocessor.
+- Avoid replacing clear one-time values with constants when a name would not improve the code.
+
 ## Naming Variables
 
 Variable names in C:
@@ -377,4 +423,5 @@ Returning `0` tells the operating system that the program finished successfully.
 - Declaration, assignment, and initialization are related but different.
 - Single quotes are for one character; double quotes are for strings.
 - Format specifiers must match the values being printed.
+- `const` and `#define` can give meaningful names to values that should not change.
 - Compiler warnings can reveal mistakes even when a program still runs.
