@@ -8,8 +8,20 @@ These notes follow the C programs I have written so far:
 - [04constants.c](04constants.c)
 - [05input.c](05input.c)
 - [06escapeSequence.c](06escapeSequence.c)
+- [Basic Problem Set 1](C-Basic-ProblemSet1/)
 
 They explain the ideas used in those programs without moving ahead of the code.
+
+## Basic Problem Practice
+
+The first problem set applies the basics learned so far:
+
+- [Rectangle area](C-Basic-ProblemSet1/01problem.c) - hard-coded values and user input
+- [Circle area and cylinder volume](C-Basic-ProblemSet1/02problem.c) - constants and calculations
+- [Celsius to Fahrenheit](C-Basic-ProblemSet1/03problem.c) - input and floating-point calculation
+- [Simple interest](C-Basic-ProblemSet1/04problem.c) - input, formulas, and readable variable names
+
+These solutions are practice records. They can be improved as more C concepts are learned.
 
 ## What Is C?
 
