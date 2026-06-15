@@ -24,6 +24,8 @@ The first conditional problem set applies the chapter through:
 - [Finding the greatest of four numbers](C-Cond_Inst-ProblemSet1/06problem.c)
 - [Displaying and classifying ASCII characters](C-Cond_Inst-ProblemSet1/07problem.c)
 
+The next chapter is [C Loops](../04Loops/C-Loops.md).
+
 ## Conditions And Truth Values
 
 A condition is an expression that C checks as either false or true.
