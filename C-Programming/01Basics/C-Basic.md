@@ -392,7 +392,7 @@ float result = 7 / (float)2;
 
 Here, `(float)` explicitly converts `2` before division.
 
-Conversions can change or lose part of a value, so they should be used carefully. Type conversion is explained further in [C Instructions And Operators](../Instructions&Operators/C-instructions_operators.md) and will be understood better through later practice chapters.
+Conversions can change or lose part of a value, so they should be used carefully. Type conversion is explained further in [C Instructions And Operators](../02Instructions&Operators/C-instructions_operators.md) and will be understood better through later practice chapters.
 
 ## Checking Types And Sizes
 

@@ -6,6 +6,6 @@ I will add work one item at a time as I learn and practice.
 
 ## Current Notes
 
-- [C Basics](C-Programming/Basic/C-Basic.md)
-- [C Instructions And Operators](C-Programming/Instructions&Operators/C-instructions_operators.md)
-- [C Conditional Instructions](C-Programming/Conditional-Instructions/C-conditional-instruction.md)
+- [C Basics](C-Programming/01Basics/C-Basic.md)
+- [C Instructions And Operators](C-Programming/02Instructions&Operators/C-instructions_operators.md)
+- [C Conditional Instructions](C-Programming/03Conditional-Instructions/C-conditional-instruction.md)

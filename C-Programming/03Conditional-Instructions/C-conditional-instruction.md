@@ -256,7 +256,7 @@ The relational comparisons happen before `&&`, so C understands it as:
 
 Parentheses are still useful when they make the intended grouping easier to see.
 
-Arithmetic operators, assignment, type casts, `sizeof`, and address-of `&` were introduced in the earlier [C Basics](../Basic/C-Basic.md) and [C Instructions And Operators](../Instructions&Operators/C-instructions_operators.md) notes. Their place in the table matters when they are combined with conditions.
+Arithmetic operators, assignment, type casts, `sizeof`, and address-of `&` were introduced in the earlier [C Basics](../01Basics/C-Basic.md) and [C Instructions And Operators](../02Instructions&Operators/C-instructions_operators.md) notes. Their place in the table matters when they are combined with conditions.
 
 ## Summary
 

@@ -10,7 +10,7 @@ Practice files:
 - [Associativity practice](04associativity.c)
 - [Instructions and operators problem set 1](C-Inst-Oper-ProblemSet1/)
 
-The next chapter, [C Conditional Instructions](../Conditional-Instructions/C-conditional-instruction.md), continues with relational, logical, and conditional operators.
+The next chapter, [C Conditional Instructions](../03Conditional-Instructions/C-conditional-instruction.md), continues with relational, logical, and conditional operators.
 
 The first problem set practices:
 
@@ -283,7 +283,7 @@ int result = (2 + 3) * 4;
 
 This result is `20`.
 
-As more operators are introduced, the precedence table is continued in [C Conditional Instructions](../Conditional-Instructions/C-conditional-instruction.md#operator-precedence).
+As more operators are introduced, the precedence table is continued in [C Conditional Instructions](../03Conditional-Instructions/C-conditional-instruction.md#operator-precedence).
 
 For the operators covered in this chapter, the order is:
 
