@@ -165,6 +165,8 @@ if (ch >= 'A' && ch <= 'Z') {
 
 ASCII defines values from `0` to `127`. Modern systems can represent many more characters using encodings such as Unicode, but the basic English letters, digits, and common symbols used in these programs follow ASCII values. See the [ASCII character problem](C-Cond_Inst-ProblemSet1/07problem.c).
 
+Also may refer: https://www.ascii-code.com/
+
 ## Logical Operators
 
 Logical operators combine or reverse conditions. See [06logicalOperator.c](06logicalOperator.c).
