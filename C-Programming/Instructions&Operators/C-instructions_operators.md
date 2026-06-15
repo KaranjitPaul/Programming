@@ -10,6 +10,8 @@ Practice files:
 - [Associativity practice](04associativity.c)
 - [Instructions and operators problem set 1](C-Inst-Oper-ProblemSet1/)
 
+The next chapter, [C Conditional Instructions](../Conditional-Instructions/C-conditional-instruction.md), continues with relational, logical, and conditional operators.
+
 The first problem set practices:
 
 - [Finding the invalid declaration](C-Inst-Oper-ProblemSet1/01problem.c)
@@ -281,12 +283,16 @@ int result = (2 + 3) * 4;
 
 This result is `20`.
 
-For the operators covered so far, the order is:
+As more operators are introduced, the precedence table is continued in [C Conditional Instructions](../Conditional-Instructions/C-conditional-instruction.md#operator-precedence).
 
-1. Parentheses `()`
-2. Multiplication `*`, division `/`, and remainder `%`
-3. Addition `+` and subtraction `-`
-4. Assignment `=`
+For the operators covered in this chapter, the order is:
+
+| Precedence | Operators | Purpose | Associativity |
+| ---: | --- | --- | --- |
+| Highest | `()` | Group an expression | Left to right |
+|  | `*`, `/`, `%` | Multiplication, division, remainder | Left to right |
+|  | `+`, `-` | Addition, subtraction | Left to right |
+| Lowest | `=` | Assignment | Right to left |
 
 Assignment has lower precedence than the arithmetic operators, so the calculation on the right side happens before its result is stored.
 
