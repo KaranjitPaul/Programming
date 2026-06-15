@@ -429,6 +429,8 @@ char letter = 'e';
 
 Single quotes represent one character.
 
+Internally, a `char` stores a numeric character code. Basic English letters, digits, and symbols commonly use ASCII values. This is introduced properly in [C Conditional Instructions](../03Conditional-Instructions/C-conditional-instruction.md#ascii-and-character-values).
+
 ```c
 printf("Hello");
 ```

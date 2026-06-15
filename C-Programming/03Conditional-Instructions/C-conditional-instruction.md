@@ -12,6 +12,17 @@ Practice files:
 - [Logical operators](06logicalOperator.c)
 - [Nested `if`](07nestedIf.c)
 - [Grade calculator quiz](08quiz.c)
+- [Conditional instructions problem set 1](C-Cond_Inst-ProblemSet1/)
+
+The first conditional problem set applies the chapter through:
+
+- [Assignment inside a condition](C-Cond_Inst-ProblemSet1/01problem.c)
+- [Student pass or fail requirements](C-Cond_Inst-ProblemSet1/02problem.c)
+- [Progressive income-tax slabs](C-Cond_Inst-ProblemSet1/03problem.c)
+- [Leap-year conditions](C-Cond_Inst-ProblemSet1/04problem.c)
+- [Lowercase character checking](C-Cond_Inst-ProblemSet1/05problem.c)
+- [Finding the greatest of four numbers](C-Cond_Inst-ProblemSet1/06problem.c)
+- [Displaying and classifying ASCII characters](C-Cond_Inst-ProblemSet1/07problem.c)
 
 ## Conditions And Truth Values
 
@@ -96,6 +107,16 @@ score = 10;  // Assigns 10 to score
 score == 10; // Checks whether score equals 10
 ```
 
+An assignment expression also produces the value that was assigned:
+
+```c
+if (score = 10) {
+    printf("This runs because the assigned value 10 is non-zero.\n");
+}
+```
+
+This is valid C, but it is commonly an accidental mistake when `score == 10` was intended. Compilers can warn about it. The [assignment condition problem](C-Cond_Inst-ProblemSet1/01problem.c) uses extra parentheses to show that the assignment is intentional.
+
 Comparisons should not be chained like they are in mathematics:
 
 ```c
@@ -104,6 +125,45 @@ Comparisons should not be chained like they are in mathematics:
 ```
 
 The second expression first produces `0` or `1` from `18 <= age`, then compares that result with `60`.
+
+Characters can also be compared because C stores them using numeric character codes. Character literals keep these comparisons readable:
+
+```c
+ch >= 'a' && ch <= 'z'
+```
+
+This checks whether `ch` falls within the lowercase-letter range without writing the ASCII values `97` and `122` directly.
+
+## ASCII And Character Values
+
+ASCII stands for **American Standard Code for Information Interchange**. It is a character-encoding standard that gives numeric codes to letters, digits, symbols, and control characters.
+
+Some useful ASCII ranges are:
+
+| Characters | ASCII Values |
+| --- | ---: |
+| Digits `'0'` to `'9'` | `48` to `57` |
+| Uppercase letters `'A'` to `'Z'` | `65` to `90` |
+| Lowercase letters `'a'` to `'z'` | `97` to `122` |
+
+A `char` stores a numeric character code. The format specifier decides whether `printf` shows it as a character or a number:
+
+```c
+char ch = 'A';
+
+printf("%c\n", ch); // Prints A
+printf("%d\n", ch); // Prints 65 on an ASCII-based system
+```
+
+Using character literals such as `'A'` and `'z'` is usually clearer than writing their numeric codes directly:
+
+```c
+if (ch >= 'A' && ch <= 'Z') {
+    printf("Uppercase letter\n");
+}
+```
+
+ASCII defines values from `0` to `127`. Modern systems can represent many more characters using encodings such as Unicode, but the basic English letters, digits, and common symbols used in these programs follow ASCII values. See the [ASCII character problem](C-Cond_Inst-ProblemSet1/07problem.c).
 
 ## Logical Operators
 
@@ -267,3 +327,5 @@ Arithmetic operators, assignment, type casts, `sizeof`, and address-of `&` were 
 - A ternary operator is useful for a short decision that produces a value.
 - `switch` selects among constant cases.
 - `break` prevents unwanted fall-through into later cases.
+- Character literals can be used in relational comparisons.
+- ASCII gives numeric codes to basic characters.
