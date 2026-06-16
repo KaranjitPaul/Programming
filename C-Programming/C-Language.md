@@ -12,3 +12,9 @@ Return to [Programming](../Programming.md).
 4. [C Loops](04Loops/C-Loops.md)
 
 Each chapter note links to its related code and problem sets.
+
+## Projects
+
+- [C Projects](Projects/Projects.md)
+
+Projects combine multiple chapter concepts into small usable programs.
