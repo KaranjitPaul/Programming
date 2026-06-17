@@ -1,5 +1,9 @@
 # C Instructions And Operators
 
+Parent: [C Language](../C-Language.md)  
+Previous: [C Basics](../01Basics/C-Basic.md)  
+Next: [C Conditional Instructions](../03Conditional-Instructions/C-conditional-instruction.md)
+
 C programs are made of instructions that tell the computer what to do.
 
 Practice files:
@@ -18,6 +22,21 @@ The first problem set practices:
 - [Finding an expression's result type](C-Inst-Oper-ProblemSet1/02problem.c)
 - [Checking divisibility using remainder](C-Inst-Oper-ProblemSet1/03problem.c)
 - [Evaluating an expression step by step](C-Inst-Oper-ProblemSet1/04problem.c)
+
+## Contents
+
+- [Type Declaration Instructions](#type-declaration-instructions)
+- [Arithmetic Instructions](#arithmetic-instructions)
+- [Operations, Operators, And Operands](#operations-operators-and-operands)
+- [Spaces Around Operators And Operands](#spaces-around-operators-and-operands)
+- [Basic Arithmetic Operators](#basic-arithmetic-operators)
+- [Assignment Operator](#assignment-operator)
+- [Division And Modulus](#division-and-modulus)
+- [Type Conversion In Arithmetic](#type-conversion-in-arithmetic)
+- [Operator Precedence](#operator-precedence)
+- [Associativity](#associativity)
+- [Control Instructions](#control-instructions)
+- [Summary](#summary)
 
 At a high level, C instructions can be grouped into:
 

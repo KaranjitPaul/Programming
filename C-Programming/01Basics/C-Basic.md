@@ -1,5 +1,9 @@
 # C Basics
 
+Parent: [C Language](../C-Language.md)  
+Previous: None  
+Next: [C Instructions And Operators](../02Instructions&Operators/C-instructions_operators.md)
+
 These notes follow the C programs I have written so far:
 
 - [01helloWorld.c](01helloWorld.c)
@@ -11,6 +15,26 @@ These notes follow the C programs I have written so far:
 - [Basic Problem Set 1](C-Basic-ProblemSet1/)
 
 They explain the ideas used in those programs without moving ahead of the code.
+
+## Contents
+
+- [Basic Problem Practice](#basic-problem-practice)
+- [What Is C?](#what-is-c)
+- [From Source Code To A Running Program](#from-source-code-to-a-running-program)
+- [Preprocessor Directives](#preprocessor-directives)
+- [Header Files And `stdio.h`](#header-files-and-stdioh)
+- [The `main` Function](#the-main-function)
+- [Using `printf`](#using-printf)
+- [Taking Input With `scanf`](#taking-input-with-scanf)
+- [Variables](#variables)
+- [Basic Data Types](#basic-data-types)
+- [Type Conversion](#type-conversion)
+- [Format Specifiers](#format-specifiers)
+- [Escape Sequences](#escape-sequences)
+- [Constants](#constants)
+- [C Keywords](#c-keywords)
+- [Comments](#comments)
+- [Lessons So Far](#lessons-so-far)
 
 ## Basic Problem Practice
 

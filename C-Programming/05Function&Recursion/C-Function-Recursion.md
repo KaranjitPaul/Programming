@@ -1,5 +1,9 @@
 # C Functions And Recursion
 
+Parent: [C Language](../C-Language.md)  
+Previous: [C Loops](../04Loops/C-Loops.md)  
+Next: [C Projects](../Projects/Projects.md)
+
 Functions let a program divide work into smaller named blocks. Instead of writing every statement inside `main`, a function lets one part of the program handle one clear task.
 
 Practice files:
@@ -11,6 +15,23 @@ Practice files:
 - [Recursion using factorial](05recursion.c)
 
 This chapter continues from [C Loops](../04Loops/C-Loops.md). Loops repeat work, while functions organize work.
+
+## Contents
+
+- [What Is A Function?](#what-is-a-function)
+- [Components Of A Function](#components-of-a-function)
+- [Declaration Or Prototype](#declaration-or-prototype)
+- [Function Definition](#function-definition)
+- [Function Call](#function-call)
+- [Library Functions And User-Defined Functions](#library-functions-and-user-defined-functions)
+- [Types Of Functions](#types-of-functions)
+- [Parameters And Arguments](#parameters-and-arguments)
+- [Passing Values To A Function](#passing-values-to-a-function)
+- [Return Value](#return-value)
+- [Important Points](#important-points)
+- [Math Library Function](#math-library-function)
+- [Recursion](#recursion)
+- [Summary](#summary)
 
 ## What Is A Function?
 

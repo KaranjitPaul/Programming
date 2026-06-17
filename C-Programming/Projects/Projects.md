@@ -1,8 +1,18 @@
 # C Projects
 
+Parent: [C Language](../C-Language.md)  
+Previous: None
+Next: None
+
 This folder stores small C projects that combine multiple concepts from earlier chapters.
 
 Project code can be a little playful, but the documentation here stays formal so the learning is easy to review later.
+
+## Contents
+
+- [Random Number Guessing Game](#1-random-number-guessing-game)
+- [Random Number Generation](#random-number-generation)
+- [Limiting The Random Number Range](#limiting-the-random-number-range)
 
 ## Projects
 

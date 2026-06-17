@@ -1,5 +1,9 @@
 # C Conditional Instructions
 
+Parent: [C Language](../C-Language.md)  
+Previous: [C Instructions And Operators](../02Instructions&Operators/C-instructions_operators.md)  
+Next: [C Loops](../04Loops/C-Loops.md)
+
 Conditional instructions let a program make decisions instead of always running every statement.
 
 Practice files:
@@ -25,6 +29,21 @@ The first conditional problem set applies the chapter through:
 - [Displaying and classifying ASCII characters](C-Cond_Inst-ProblemSet1/07problem.c)
 
 The next chapter is [C Loops](../04Loops/C-Loops.md).
+
+## Contents
+
+- [Conditions And Truth Values](#conditions-and-truth-values)
+- [`if`](#if)
+- [`if...else`](#ifelse)
+- [`if...else if...else`](#ifelse-ifelse)
+- [Nested `if`](#nested-if)
+- [Relational Operators](#relational-operators)
+- [ASCII And Character Values](#ascii-and-character-values)
+- [Logical Operators](#logical-operators)
+- [Ternary Operator](#ternary-operator)
+- [`switch`, `case`, And `default`](#switch-case-and-default)
+- [Operator Precedence](#operator-precedence)
+- [Summary](#summary)
 
 ## Conditions And Truth Values
 

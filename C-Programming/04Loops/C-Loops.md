@@ -1,5 +1,9 @@
 # C Loops
 
+Parent: [C Language](../C-Language.md)  
+Previous: [C Conditional Instructions](../03Conditional-Instructions/C-conditional-instruction.md)  
+Next: [C Functions And Recursion](../05Function&Recursion/C-Function-Recursion.md)
+
 Loops repeat a block of code while a condition allows it. They are useful when the same action must happen several times, such as printing a sequence, checking multiple values, or repeating a menu until the user chooses to exit.
 
 Practice files:
@@ -25,6 +29,22 @@ The first loops practice set applies:
 - [Prime number check using `while` and `do...while`](C-Loops-practiceSet1/09problem.c)
 
 Loops are a type of control instruction. They continue the ideas introduced in [C Conditional Instructions](../03Conditional-Instructions/C-conditional-instruction.md), because every loop also uses a condition to decide whether it should continue.
+
+## Contents
+
+- [Iteration](#iteration)
+- [`while` Loop](#while-loop)
+- [`do...while` Loop](#dowhile-loop)
+- [`for` Loop](#for-loop)
+- [Already Declared Variables In A `for` Loop](#already-declared-variables-in-a-for-loop)
+- [`break`](#break)
+- [`continue`](#continue)
+- [Increment And Decrement](#increment-and-decrement)
+- [Compound Assignment Operators](#compound-assignment-operators)
+- [Multiple Variables In A `for` Loop](#multiple-variables-in-a-for-loop)
+- [Choosing A Loop](#choosing-a-loop)
+- [Tricky Results And Common Mistakes](#tricky-results-and-common-mistakes)
+- [Summary](#summary)
 
 ## Iteration
 
