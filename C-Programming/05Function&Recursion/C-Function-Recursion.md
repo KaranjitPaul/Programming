@@ -14,6 +14,16 @@ Practice files:
 - [Using a math library function](04mathLibrary.c)
 - [Recursion using factorial](05recursion.c)
 
+Practice set:
+
+- [Problem 1: Average of three numbers](C-Function-Recursion-practiceSet1/01problem.c)
+- [Problem 2: Celsius to Fahrenheit](C-Function-Recursion-practiceSet1/02problem.c)
+- [Problem 3: Force of attraction](C-Function-Recursion-practiceSet1/03problem.c)
+- [Problem 4: Fibonacci using recursion](C-Function-Recursion-practiceSet1/04problem.c) - code pending
+- [Problem 5: Expression output question](C-Function-Recursion-practiceSet1/05problem.c)
+- [Problem 6: Sum of first n natural numbers](C-Function-Recursion-practiceSet1/06problem.c)
+- [Problem 7: Pattern using function](C-Function-Recursion-practiceSet1/07problem.c) - code pending
+
 This chapter continues from [C Loops](../04Loops/C-Loops.md). Loops repeat work, while functions organize work.
 
 ## Contents
