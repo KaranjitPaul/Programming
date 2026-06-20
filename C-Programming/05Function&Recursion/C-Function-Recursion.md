@@ -2,7 +2,7 @@
 
 Parent: [C Language](../C-Language.md)  
 Previous: [C Loops](../04Loops/C-Loops.md)  
-Next: [C Projects](../Projects/Projects.md)
+Next: [C Pointers](../06Pointers/C-Pointers.md)
 
 Functions let a program divide work into smaller named blocks. Instead of writing every statement inside `main`, a function lets one part of the program handle one clear task.
 
