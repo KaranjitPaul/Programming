@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     // First calculation using values already written in the program.
     int length = 5;
     int breadth = 3;

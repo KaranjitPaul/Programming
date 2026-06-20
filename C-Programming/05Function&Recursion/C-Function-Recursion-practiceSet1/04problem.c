@@ -12,7 +12,7 @@ int fibonacci(int n) {
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-int main(void) {
+int main() {
     int n;
 
     printf("Enter the nth term: ");

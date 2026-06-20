@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int n;
 
     printf("Enter the number to print its table: ");

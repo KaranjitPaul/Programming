@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int i = 10; // Declare and initialize 'i' with 10
     int j = i;  // Initialize 'j' using the value stored in 'i'
     int a = 2, b = 3, c = 4, d = 5;

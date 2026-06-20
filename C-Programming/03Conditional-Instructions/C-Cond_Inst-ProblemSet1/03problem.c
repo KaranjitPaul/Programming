@@ -8,7 +8,7 @@ There is no tax below 2.5L. Take income as input from the user.
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     float income;
     float tax = 0.0f;
 

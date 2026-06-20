@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int i = 10;
 
     // The body runs once before the condition is checked.

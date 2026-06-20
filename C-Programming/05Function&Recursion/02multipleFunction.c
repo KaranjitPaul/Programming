@@ -9,11 +9,11 @@ main() should call all of these in order: 1 -> 2 -> 3.
 
 #include <stdio.h>
 
-void morning(void); // Declarations make the function names known before main().
-void noon(void);
-void night(void);
+void morning(); // Declarations make the function names known before main().
+void noon();
+void night();
 
-int main(void) {
+int main() {
     morning();
     noon();
     night();
@@ -21,14 +21,14 @@ int main(void) {
     return 0;
 }
 
-void morning(void) {
+void morning() {
     printf("Good Morning! Myself Karanjit\n");
 }
 
-void noon(void) {
+void noon() {
     printf("Good Afternoon! Myself Karanjit\n");
 }
 
-void night(void) {
+void night() {
     printf("Good Night!\n");
 }

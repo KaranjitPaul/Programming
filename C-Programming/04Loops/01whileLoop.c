@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int i = 0;
 
     // while checks the condition before every iteration.

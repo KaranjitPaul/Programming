@@ -48,7 +48,7 @@ This chapter continues from [C Loops](../04Loops/C-Loops.md). Loops repeat work,
 A function is a named block of code that performs a task.
 
 ```c
-void display(void) {
+void display() {
     printf("Hello\n");
 }
 ```
@@ -82,20 +82,20 @@ int sum(int a, int b) {
 
 If a function does not return a value, its return type is `void`.
 
-If a function does not receive values, write `void` inside the parentheses:
+If a function does not receive values, this beginner series keeps the parentheses empty:
 
 ```c
-void display(void)
+void display()
 ```
 
-This clearly means the function takes no parameters.
+This means the function is not taking any values from outside.
 
 ## Declaration Or Prototype
 
 A function declaration, also called a prototype, tells the compiler that a function exists.
 
 ```c
-void display(void);
+void display();
 ```
 
 The declaration usually contains:
@@ -110,14 +110,14 @@ It does not contain the function body.
 The prototype is useful when the function definition appears after `main`.
 
 ```c
-void display(void);
+void display();
 
-int main(void) {
+int main() {
     display();
     return 0;
 }
 
-void display(void) {
+void display() {
     printf("Hello\n");
 }
 ```
@@ -129,7 +129,7 @@ Without the prototype, the compiler may reach `display()` inside `main` before i
 A function definition contains the actual body of the function:
 
 ```c
-void display(void) {
+void display() {
     printf("Hello\n");
 }
 ```
@@ -176,7 +176,7 @@ These are already written somewhere else. Header files give the compiler the inf
 User-defined functions are functions written by the programmer:
 
 ```c
-void display(void) {
+void display() {
     printf("Hello\n");
 }
 ```
@@ -191,15 +191,15 @@ See [03functionType.c](03functionType.c).
 
 | Type | Return Value? | Parameters? | Example |
 | --- | --- | --- | --- |
-| Type 1 | No | No | `void display_message(void)` |
+| Type 1 | No | No | `void display_message()` |
 | Type 2 | Yes | Yes | `int sum(int a, int b)` |
 | Type 3 | No | Yes | `void print_char(char a)` |
-| Type 4 | Yes | No | `float pi(void)` |
+| Type 4 | Yes | No | `float pi()` |
 
 ### Type 1: No Return Value And No Parameters
 
 ```c
-void display_message(void) {
+void display_message() {
     printf("Hello\n");
 }
 ```
@@ -235,7 +235,7 @@ Use this type when the function needs input only to perform an action.
 ### Type 4: Return Value But No Parameters
 
 ```c
-float pi(void) {
+float pi() {
     return 3.145f;
 }
 ```

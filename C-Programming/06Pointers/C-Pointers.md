@@ -25,6 +25,7 @@ This chapter talks only about pointer basics. Function calls using pointers, lik
 - [Pointer Type Matters](#pointer-type-matters)
 - [Address Of A Pointer Variable](#address-of-a-pointer-variable)
 - [Pointer To Pointer](#pointer-to-pointer)
+- [Multiple Pointer Levels](#multiple-pointer-levels)
 - [Printing Pointers](#printing-pointers)
 - [Important Points](#important-points)
 - [Summary](#summary)
@@ -287,6 +288,70 @@ k -> j -> i
 
 So `**k` gives the value of `i`.
 
+## Multiple Pointer Levels
+
+You can use more than one `*` or `&` when the types match.
+
+From [04pointerToPointer.c](04pointerToPointer.c):
+
+```c
+int i = 72;
+int *j = &i;
+int **k = &j;
+int ***n = &k;
+```
+
+Read it step by step:
+
+- `j` stores the address of `i`
+- `k` stores the address of `j`
+- `n` stores the address of `k`
+
+So the chain looks like:
+
+```text
+n -> k -> j -> i
+```
+
+That means:
+
+```c
+***n
+```
+
+reaches the value of `i`.
+
+You can also combine `*` and `&` in one expression:
+
+```c
+**(&j)
+```
+
+Here is the simple breakdown:
+
+```text
+&j     -> address of j
+*(&j)  -> value at address of j, so it becomes j
+**(&j) -> value at address stored in j, so it becomes i
+```
+
+So if `i` is `72`, then `**(&j)` gives `72`.
+
+There is no small fixed limit like "only one star" or "only two stars". C allows multiple pointer levels if the type is written correctly. But in real code, too many levels become hard to understand, so most beginner programs should stay around one or two levels unless there is a clear reason.
+
+Common pattern:
+
+| Expression | Meaning |
+| --- | --- |
+| `i` | value of `i` |
+| `&i` | address of `i` |
+| `j` | address stored in `j` |
+| `*j` | value at address stored in `j` |
+| `&j` | address of pointer variable `j` |
+| `*(&j)` | same as `j` |
+| `**(&j)` | same as `*j`, so it gives value of `i` |
+| `***n` | reaches `i` through `n -> k -> j -> i` |
+
 ## Printing Pointers
 
 Addresses should be printed using `%p`.
@@ -316,6 +381,8 @@ Avoid printing addresses with `%d` or `%u`. Addresses are not normal integer val
 - A pointer should match the data type it points to.
 - `j` and `&j` are different: one is the stored address, the other is the pointer variable's own address.
 - `int **k` is a pointer to pointer.
+- `int ***n = &k;` is possible because `n` stores the address of `k`.
+- More stars mean more levels to travel through, but too many levels can make code confusing.
 - Do not worry about using pointers in function calls yet. That will make more sense after the basic pointer idea feels comfortable.
 
 ## Summary
@@ -326,3 +393,5 @@ Avoid printing addresses with `%d` or `%u`. Addresses are not normal integer val
 - `*(&i)` gives back the value of `i`.
 - `int **k = &j;` means `k` stores the address of pointer `j`.
 - `**k` reaches the original value through two pointer levels.
+- `**(&j)` first gets the address of `j`, then comes back through it to reach the value of `i`.
+- `int ***n = &k;` creates one more pointer level above `k`.

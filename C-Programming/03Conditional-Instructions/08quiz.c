@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     /*
     Quick Quiz: Find a student's grade from their marks:
         90 - 100 => A

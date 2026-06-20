@@ -212,7 +212,7 @@ Angle brackets are used for standard or system headers:
 ## The `main` Function
 
 ```c
-int main(void) {
+int main() {
     return 0;
 }
 ```
@@ -221,7 +221,7 @@ Every current program starts running from `main`.
 
 - `int` says that `main` returns an integer value.
 - `main` is the function name.
-- `void` says that this version of `main` does not receive arguments.
+- Empty brackets `()` mean we are not sending any values to `main` in these beginner programs.
 - `{` and `}` mark the function's body and scope.
 
 The statements inside the braces run from top to bottom.
@@ -398,8 +398,6 @@ char character = 'C';
 ```
 
 The `f` suffix marks `2.5f` as a `float` literal. Without `f`, a decimal literal such as `2.5` is a `double` by default.
-
-For now, `void` can be seen inside `main(void)`. The `void` between the brackets means that `main` is not receiving any values.
 
 Functions and other uses of `void` can be studied later.
 

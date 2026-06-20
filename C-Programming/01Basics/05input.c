@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int age; // This variable will store the age entered by the user
 
     printf("Enter your age: ");

@@ -5,7 +5,7 @@ float force(float m) {
     return m * 9.8f;
 }
 
-int main(void) {
+int main() {
     float m = 75;
 
     printf("Force of attraction: %.2fN\n", force(m));

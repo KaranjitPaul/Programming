@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     // \n starts a new line.
     printf("NEW LINE\n");
     printf("Hello\nWorld\n");

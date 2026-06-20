@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int working_age = 35;
     int retirement_age = 68;
 

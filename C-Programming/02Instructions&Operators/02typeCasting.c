@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     // The decimal part is removed when the double value is stored in an int.
     int num = 3.55;
     printf("Value stored in num: %d\n", num);

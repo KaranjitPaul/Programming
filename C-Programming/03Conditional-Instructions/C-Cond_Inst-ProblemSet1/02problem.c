@@ -6,7 +6,7 @@ Take the marks as input from the user.
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int math, science, social_science;
 
     printf("Enter your marks:\nMaths: ");

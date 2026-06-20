@@ -5,7 +5,7 @@ whether it is a lowercase letter, uppercase letter, digit, or another symbol.
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     char ch;
 
     printf("Enter a character: ");

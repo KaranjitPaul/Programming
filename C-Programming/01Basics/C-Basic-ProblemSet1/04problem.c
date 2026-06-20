@@ -5,7 +5,7 @@ principal, number of years and rate of interest.
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int principal;
     int number_of_years;
     int rate;

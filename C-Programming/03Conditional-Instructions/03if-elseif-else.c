@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int age = 19;
 
     // Conditions are checked from top to bottom until one is true.

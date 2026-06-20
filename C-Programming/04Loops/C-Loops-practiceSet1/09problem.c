@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int num;
     int is_prime = 1;
     int i = 2;

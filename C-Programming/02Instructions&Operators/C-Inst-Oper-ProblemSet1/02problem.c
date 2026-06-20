@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     // 3.0 is a double, so the expression produces the double value -1.625.
     double exact_result = 3.0 / 8 - 2;
 

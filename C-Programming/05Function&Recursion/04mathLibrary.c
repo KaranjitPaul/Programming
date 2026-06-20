@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <math.h> // For using pow()
 
-int main(void) {
+int main() {
     int side_a = 7;
     double area = pow(side_a, 2); // pow() works like side_a to the power of 2.
 

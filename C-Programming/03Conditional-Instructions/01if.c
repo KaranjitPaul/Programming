@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int age = 14;
 
     // Each if condition is checked separately.

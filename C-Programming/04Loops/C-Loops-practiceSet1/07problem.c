@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int num = 5;
     int original_num = num;
     int fact = 1;

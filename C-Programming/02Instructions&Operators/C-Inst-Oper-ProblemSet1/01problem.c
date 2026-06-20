@@ -7,7 +7,7 @@ c. char dt = '21 dec 2020';
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int a = 1;
     int b = a;
     int v = 3 * 3;

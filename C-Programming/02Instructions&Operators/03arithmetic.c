@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int big_num = 15;
     int small_num = 4;
 

@@ -5,7 +5,7 @@ multiplication table of 8. Consider 8 x 1 to 8 x 10.
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int sum = 0;
 
     for (int i = 1; i <= 10; i++) {

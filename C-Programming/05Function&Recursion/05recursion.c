@@ -12,7 +12,7 @@ int factorial(int num) {
     return num * factorial(num - 1);
 }
 
-int main(void) {
+int main() {
     
     printf("Factorial of 5 is: %d\n", factorial(5));
 

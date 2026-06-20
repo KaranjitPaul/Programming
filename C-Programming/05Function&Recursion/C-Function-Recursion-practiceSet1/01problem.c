@@ -5,7 +5,7 @@ float average(int num1, int num2, int num3) {
     return (num1 + num2 + num3) / 3.0f;
 }
 
-int main(void) {
+int main() {
     int a = 12;
     int b = 8;
     int c = 15;

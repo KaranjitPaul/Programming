@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int first, second, third, fourth;
 
     printf("Enter number 1: ");

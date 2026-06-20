@@ -9,7 +9,7 @@ int naturalNumSum(int num) {
     return num + naturalNumSum(num - 1);
 }
 
-int main(void) {
+int main() {
     int num = 10;
 
     printf("Sum of first %d natural numbers: %d\n", num, naturalNumSum(num));

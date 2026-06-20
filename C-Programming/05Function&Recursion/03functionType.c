@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void display_message(void) {
+void display_message() {
     // Type 1: no return value and no parameters.
     printf("Type 1: no return value and no parameters.\n");
 }
@@ -15,12 +15,12 @@ void print_char(char a) {
     printf("Type 3 character is: %c\n", a);
 }
 
-float pi(void) {
+float pi() {
     // Type 4: returns a value, but takes no parameters.
     return 3.145f;
 }
 
-int main(void) {
+int main() {
     int num1 = 25;
     int num2 = 20;
     int sum_of_num = sum(num1, num2);

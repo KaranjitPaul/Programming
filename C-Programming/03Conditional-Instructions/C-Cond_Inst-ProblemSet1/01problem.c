@@ -10,7 +10,7 @@ else
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int a = 10;
 
     // This intentionally uses assignment instead of comparison.

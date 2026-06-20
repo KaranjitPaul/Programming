@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int a; // Declaring an integer variable
     a = 6; // Assigning a value after declaration
 

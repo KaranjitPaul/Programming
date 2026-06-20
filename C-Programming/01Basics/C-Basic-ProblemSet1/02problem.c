@@ -7,7 +7,7 @@ volume of a cylinder given its radius and height.
 
 #define PI 3.1415
 
-int main(void) {
+int main() {
     int radius = 7;
     int height = 10;
 

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     for (int i = 0; i < 10; i++) {
         if (i == 5) {
             continue; // Skip the rest of this iteration.

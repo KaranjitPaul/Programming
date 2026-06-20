@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-void display(void); // Function declaration/prototype
+void display(); // Function declaration/prototype
 
-int main(void) {
+int main() {
     display(); // Function call
 
     return 0;
 }
 
-void display(void) { // Function definition
+void display() { // Function definition
     printf("Hello, I am Karanjit Paul.\n");
 }
 

@@ -5,7 +5,7 @@ printf("%d %d %d \n", a, ++a, a++);
 */
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int a = 4;
 
     // output 4, 5, 5

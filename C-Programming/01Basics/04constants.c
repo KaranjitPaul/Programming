@@ -4,7 +4,7 @@
 #define COURSE_NAME "C Programming"
 #define MAX_SCORE 100
 
-int main(void) {
+int main() {
     // const means these variables should not change after initialization.
     const int DAYS_IN_WEEK = 7;
     const float PI = 3.14159f;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     // Multiple variables can be initialized and updated in one for loop.
     for (int i = 0, j = 10; i < 10 && j > 1; i++, j--) {
         printf("i: %d,\tj: %d\n", i, j);

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     char character = 'C';       // Stores a single character
     int whole_number = 25;      // Stores a whole number
     float decimal_number = 2.5f; // Stores a decimal number

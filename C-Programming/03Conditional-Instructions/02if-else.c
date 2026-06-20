@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int age = 17;
 
     // Exactly one of these two blocks will run.

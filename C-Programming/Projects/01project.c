@@ -13,7 +13,7 @@ When the guess is correct, the program displays the number of attempts used.
 #include <stdlib.h>
 #include <time.h>
 
-int main(void) {
+int main() {
     srand(time(0));
 
     int random_number = (rand() % 100) + 1;

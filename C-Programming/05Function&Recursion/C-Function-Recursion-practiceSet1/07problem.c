@@ -18,7 +18,7 @@ void pattern(int n) {
     }
 }
 
-int main(void) {
+int main() {
     int n = 0;
 
     printf("Enter n: ");
