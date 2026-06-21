@@ -11,7 +11,7 @@ Parent: [Programming](../Programming.md)
 3. [C Conditional Instructions](03Conditional-Instructions/C-conditional-instruction.md) - `if`, `else`, logical operators, `switch`, truth values, and ASCII basics
 4. [C Loops](04Loops/C-Loops.md) - `while`, `do...while`, `for`, `break`, `continue`, iteration, and loop practice
 5. [C Functions And Recursion](05Function&Recursion/C-Function-Recursion.md) - functions, prototypes, parameters, return values, library functions, and recursion
-6. [C Pointers](06Pointers/C-Pointers.md) - addresses, pointer variables, dereferencing, pointer types, and pointer to pointer basics
+6. [C Pointers](06Pointers/C-Pointers.md) - addresses, pointer variables, dereferencing, pointer levels, function calls with addresses, and swapping values
 
 Each chapter note links to its related code and problem sets.
 

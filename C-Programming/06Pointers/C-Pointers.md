@@ -12,8 +12,10 @@ Practice files:
 - [Value at address operator](02valueAtAddressOperator.c)
 - [Pointer with another data type](03otherTypes.c)
 - [Pointer to pointer](04pointerToPointer.c)
+- [Function call with pointer](05functionCall.c)
+- [Swapping values using pointers](06swap.c)
 
-This chapter talks only about pointer basics. Function calls using pointers, like call by reference, will be handled later.
+This chapter starts with pointer basics, then uses pointers with functions to show how a function can work with original variables through their addresses.
 
 ## Contents
 
@@ -26,6 +28,9 @@ This chapter talks only about pointer basics. Function calls using pointers, lik
 - [Address Of A Pointer Variable](#address-of-a-pointer-variable)
 - [Pointer To Pointer](#pointer-to-pointer)
 - [Multiple Pointer Levels](#multiple-pointer-levels)
+- [Function Calls With Values And Addresses](#function-calls-with-values-and-addresses)
+- [Changing Original Variables Through Pointers](#changing-original-variables-through-pointers)
+- [Swapping Two Values](#swapping-two-values)
 - [Printing Pointers](#printing-pointers)
 - [Important Points](#important-points)
 - [Summary](#summary)
@@ -352,6 +357,150 @@ Common pattern:
 | `**(&j)` | same as `*j`, so it gives value of `i` |
 | `***n` | reaches `i` through `n -> k -> j -> i` |
 
+## Function Calls With Values And Addresses
+
+In [05functionCall.c](05functionCall.c), two functions are used to compare what happens when a normal value is sent and when an address is sent.
+
+These two styles are usually called:
+
+- **Call by value** - sending normal values to a function
+- **Call by reference** - sending addresses so the function can work with original variables
+
+Small C note: C technically passes everything by value. So in true C wording, "call by reference" means we pass the address by value and use pointers to reach the original variable. But while learning, saying call by value and call by reference is okay as long as the meaning is clear.
+
+### Call By Value
+
+```c
+int sum_by_value(int a, int b) {
+    a = 5;
+
+    return a + b;
+}
+```
+
+When this function is called:
+
+```c
+sum_by_value(a, b);
+```
+
+the function receives copies of the values. This is called **call by value**.
+
+If `a` in `main` is `2`, then the function receives a copied `a`. Changing that copied `a` to `5` does not change the original `a` in `main`.
+
+Simple way to think:
+
+```text
+main's a  -> original value
+function a -> copied value
+```
+
+So after this call, the original `a` is still `2`.
+
+### Call By Reference
+
+```c
+int sum_by_reference(int *a, int *b) {
+    *a = 10;
+
+    return *a + *b;
+}
+```
+
+When this function is called:
+
+```c
+sum_by_reference(&a, &b);
+```
+
+we are not sending the normal values directly. We are sending the addresses of `a` and `b`. This is commonly called **call by reference**.
+
+Inside the function:
+
+```c
+*a = 10;
+```
+
+means:
+
+```text
+go to the address stored in pointer a and put 10 there
+```
+
+That is why the original `a` in `main` changes.
+
+## Changing Original Variables Through Pointers
+
+A function normally cannot directly change a variable from `main` if it receives only a copy.
+
+But if the function receives an address, it can use `*` to change the value at that address.
+
+Example:
+
+```c
+int a = 2;
+sum_by_reference(&a, &b);
+```
+
+Here:
+
+- `&a` sends the address of `a`
+- `int *a` receives that address
+- `*a = 10` changes the value stored at that address
+
+So the original variable changes because the function is not working only with a copy anymore.
+
+This is one major reason pointers are useful in C.
+
+## Swapping Two Values
+
+[06swap.c](06swap.c) uses pointers to swap two original variables.
+
+The function receives addresses:
+
+```c
+void swap(int *a, int *b)
+```
+
+The call sends addresses:
+
+```c
+swap(&a, &b);
+```
+
+Inside the function, `*a` and `*b` mean the original values stored at those addresses.
+
+Current code:
+
+```c
+*a = *a + *b;
+*b = *a - *b;
+*a = *a - *b;
+```
+
+If `a = 10` and `b = 12`:
+
+```text
+*a = 10 + 12 = 22
+*b = 22 - 12 = 10
+*a = 22 - 10 = 12
+```
+
+After this:
+
+```text
+a = 12
+b = 10
+```
+
+This works for the small integer values in the example. In real programs, using a temporary variable is usually safer and easier to read, because addition can overflow if numbers are very large.
+
+The main pointer lesson is not the math trick. The main lesson is this:
+
+```text
+Pointers let the function swap the original variables from main.
+```
+
 ## Printing Pointers
 
 Addresses should be printed using `%p`.
@@ -383,7 +532,9 @@ Avoid printing addresses with `%d` or `%u`. Addresses are not normal integer val
 - `int **k` is a pointer to pointer.
 - `int ***n = &k;` is possible because `n` stores the address of `k`.
 - More stars mean more levels to travel through, but too many levels can make code confusing.
-- Do not worry about using pointers in function calls yet. That will make more sense after the basic pointer idea feels comfortable.
+- If a function receives normal values, it works with copies.
+- If a function receives addresses, it can use pointers to work with original variables.
+- `swap(&a, &b)` sends the addresses of `a` and `b`, so the function can change both original values.
 
 ## Summary
 
@@ -395,3 +546,6 @@ Avoid printing addresses with `%d` or `%u`. Addresses are not normal integer val
 - `**k` reaches the original value through two pointer levels.
 - `**(&j)` first gets the address of `j`, then comes back through it to reach the value of `i`.
 - `int ***n = &k;` creates one more pointer level above `k`.
+- Passing `&a` to a function gives the function access to the original variable's address.
+- A function can change the original value by using `*` on the received pointer.
+- Swapping with pointers works because the function changes the values at the original addresses.
