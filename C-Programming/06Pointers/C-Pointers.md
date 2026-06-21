@@ -15,6 +15,15 @@ Practice files:
 - [Function call with pointer](05functionCall.c)
 - [Swapping values using pointers](06swap.c)
 
+Practice set:
+
+- [Problem 1: Address and value using pointer](C-Pointer-practiceSet1/01problem.c)
+- [Problem 2: Address inside function copy](C-Pointer-practiceSet1/02problem.c)
+- [Problem 3: Change original value using pointer](C-Pointer-practiceSet1/03problem.c)
+- [Problem 4: Sum and average using pointer outputs](C-Pointer-practiceSet1/04problem.c)
+- [Problem 5: Value using pointer to pointer](C-Pointer-practiceSet1/05problem.c)
+- [Problem 6: Ten times using call by value](C-Pointer-practiceSet1/06problem.c)
+
 This chapter starts with pointer basics, then uses pointers with functions to show how a function can work with original variables through their addresses.
 
 ## Contents
@@ -31,6 +40,7 @@ This chapter starts with pointer basics, then uses pointers with functions to sh
 - [Function Calls With Values And Addresses](#function-calls-with-values-and-addresses)
 - [Changing Original Variables Through Pointers](#changing-original-variables-through-pointers)
 - [Swapping Two Values](#swapping-two-values)
+- [Practice Set Concepts](#practice-set-concepts)
 - [Printing Pointers](#printing-pointers)
 - [Important Points](#important-points)
 - [Summary](#summary)
@@ -501,6 +511,113 @@ The main pointer lesson is not the math trick. The main lesson is this:
 Pointers let the function swap the original variables from main.
 ```
 
+## Practice Set Concepts
+
+The practice set repeats the same pointer ideas from different angles.
+
+### Problem 1: Address And Value
+
+[01problem.c](C-Pointer-practiceSet1/01problem.c) prints:
+
+```c
+printf("Address of a using &a: %p\n", &a);
+printf("Address of a stored in b: %p\n", b);
+printf("Value at address stored in b: %d\n", *b);
+```
+
+Here, `&a` and `b` show the same address because `b` stores the address of `a`. Then `*b` goes to that address and reads the value.
+
+### Problem 2: Address Inside Function
+
+[02problem.c](C-Pointer-practiceSet1/02problem.c) passes `i` normally:
+
+```c
+address(i);
+```
+
+This is call by value. The function receives a copy of `i`, so the address inside the function is different from the address of `i` in `main`.
+
+Same variable name does not mean same memory location.
+
+### Problem 3: Changing Original Value
+
+[03problem.c](C-Pointer-practiceSet1/03problem.c) sends the address:
+
+```c
+tenTimes(&value);
+```
+
+The function receives:
+
+```c
+void tenTimes(int *num)
+```
+
+Then this line changes the original value:
+
+```c
+*num *= 10;
+```
+
+This works because `num` stores the address of `value`.
+
+### Problem 4: Returning More Than One Result Using Pointers
+
+[04problem.c](C-Pointer-practiceSet1/04problem.c) calculates both sum and average in one function:
+
+```c
+void calculate(int a, int b, int *sum, float *average)
+```
+
+C functions can directly return only one value using `return`. But pointers can be used to store more than one result in variables from `main`.
+
+The call is:
+
+```c
+calculate(a, b, &numSum, &numAverage);
+```
+
+Inside the function:
+
+```c
+*sum = a + b;
+*average = *sum / 2.0f;
+```
+
+This means the function writes the results into `numSum` and `numAverage` through their addresses.
+
+### Problem 5: Pointer To Pointer
+
+[05problem.c](C-Pointer-practiceSet1/05problem.c) uses:
+
+```c
+int *ptr = &i;
+int **ptr1 = &ptr;
+```
+
+Here:
+
+- `ptr` stores the address of `i`
+- `ptr1` stores the address of `ptr`
+- `**ptr1` reaches the value of `i`
+
+### Problem 6: Call By Value Does Not Change Original
+
+[06problem.c](C-Pointer-practiceSet1/06problem.c) returns ten times the value:
+
+```c
+int tenTimes(int num) {
+    return num * 10;
+}
+```
+
+But it does not change the original `value` in `main` because only a copy was sent.
+
+This is the opposite of Problem 3:
+
+- Problem 3 sends address, so original value changes.
+- Problem 6 sends normal value, so original value does not change.
+
 ## Printing Pointers
 
 Addresses should be printed using `%p`.
@@ -535,6 +652,8 @@ Avoid printing addresses with `%d` or `%u`. Addresses are not normal integer val
 - If a function receives normal values, it works with copies.
 - If a function receives addresses, it can use pointers to work with original variables.
 - `swap(&a, &b)` sends the addresses of `a` and `b`, so the function can change both original values.
+- Pointers can help a function write more than one result back into variables from `main`.
+- If only a normal value is sent, the function can return a calculated result, but the original variable stays unchanged.
 
 ## Summary
 
@@ -549,3 +668,4 @@ Avoid printing addresses with `%d` or `%u`. Addresses are not normal integer val
 - Passing `&a` to a function gives the function access to the original variable's address.
 - A function can change the original value by using `*` on the received pointer.
 - Swapping with pointers works because the function changes the values at the original addresses.
+- Pointer output parameters can store multiple results, like both sum and average.
