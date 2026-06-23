@@ -2,7 +2,7 @@
 
 Parent: [C Language](../C-Language.md)  
 Previous: [C Functions And Recursion](../05Function&Recursion/C-Function-Recursion.md)  
-Next: None
+Next: [C Arrays](../07Arrays/C-Arrays.md)
 
 Pointers are variables that store memory addresses. At first they can feel strange because we usually think about values, like `72` or `'a'`, but a pointer focuses on where that value is kept in memory.
 

@@ -12,6 +12,7 @@ Parent: [Programming](../Programming.md)
 4. [C Loops](04Loops/C-Loops.md) - `while`, `do...while`, `for`, `break`, `continue`, iteration, and loop practice
 5. [C Functions And Recursion](05Function&Recursion/C-Function-Recursion.md) - functions, prototypes, parameters, return values, library functions, and recursion
 6. [C Pointers](06Pointers/C-Pointers.md) - addresses, pointer variables, dereferencing, pointer levels, function calls with addresses, and swapping values
+7. [C Arrays](07Arrays/C-Arrays.md) - storing multiple values, indexes, memory layout, pointer access, function passing, and multidimensional arrays
 
 Each chapter note links to its related code and problem sets.
 
