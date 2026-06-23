@@ -8,8 +8,23 @@ This folder is for learning Dart as a programming language first. Flutter-specif
 
 ## Contents
 
-- Basics will be added as practice begins.
+- [01. First Program](01helloWorld.dart) - printing a simple message in Dart
 
 ## Practice
 
-Practice files and notes will be added one step at a time.
+### 01. First Program
+
+File: [01helloWorld.dart](01helloWorld.dart)
+
+```dart
+void main() {
+  print("Hello World");
+}
+```
+
+This is the first basic Dart program.
+
+- `main()` is the starting point of a Dart program. When the file runs, Dart looks for `main()` first.
+- `void` means this `main()` function is not returning any value.
+- `print()` shows output in the terminal.
+- `"Hello World"` is text, also called a string.
