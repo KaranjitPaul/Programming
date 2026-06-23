@@ -15,6 +15,18 @@ Practice files:
 - [Passing array to function](05passingArrayInFunction.c)
 - [Multidimensional arrays](06multiDimentionalArray.c)
 
+Practice set:
+
+- [Problem 1: Pointer arithmetic and third element](C-Arrays-practiceSet1/01problem.c)
+- [Problem 2: `*(S + 3)` quiz](C-Arrays-practiceSet1/02problem.c)
+- [Problem 3: Multiplication table of 5](C-Arrays-practiceSet1/03problem.c)
+- [Problem 4: Custom multiplication table](C-Arrays-practiceSet1/04problem.c)
+- [Problem 5: Reverse an array](C-Arrays-practiceSet1/05problem.c)
+- [Problem 6: Count positive integers](C-Arrays-practiceSet1/06problem.c)
+- [Problem 7: 2D array for fixed tables](C-Arrays-practiceSet1/07problem.c)
+- [Problem 8: 2D array for custom tables](C-Arrays-practiceSet1/08problem.c)
+- [Problem 9: 3D array addresses](C-Arrays-practiceSet1/09problem.c)
+
 ## Contents
 
 - [What Is An Array?](#what-is-an-array)
@@ -35,6 +47,7 @@ Practice files:
 - [2D Array Memory Layout](#2d-array-memory-layout)
 - [3D Array Memory Layout](#3d-array-memory-layout)
 - [N-Dimensional Array Memory Layout](#n-dimensional-array-memory-layout)
+- [Practice Set Concepts](#practice-set-concepts)
 - [Important Points](#important-points)
 - [Summary](#summary)
 
@@ -759,6 +772,264 @@ arr3[0][1][1]
 
 The last index moves first. Then row changes. Then block changes.
 
+## Practice Set Concepts
+
+The practice set repeats arrays, pointers, functions, and multidimensional arrays together.
+
+### Problem 1: Pointer Arithmetic And Third Element
+
+[01problem.c](C-Arrays-practiceSet1/01problem.c) uses:
+
+```c
+int *ptr = arr;
+```
+
+Here `ptr` points to `arr[0]`.
+
+So:
+
+```c
+*(ptr + 2)
+```
+
+means:
+
+```text
+move 2 int elements ahead from arr[0], then read the value there
+```
+
+That reaches:
+
+```c
+arr[2]
+```
+
+Since indexing starts from `0`, `arr[2]` is the third element.
+
+### Problem 2: Why `*(S + 3)` Is Not Third Element
+
+[02problem.c](C-Arrays-practiceSet1/02problem.c) answers this quiz:
+
+```text
+If S[3] is a 1-D array, then *(S + 3) refers to the third element.
+```
+
+The answer is false.
+
+For:
+
+```c
+int S[3];
+```
+
+valid elements are:
+
+```text
+S[0], S[1], S[2]
+```
+
+So:
+
+```c
+*(S + 2)
+```
+
+is the third element.
+
+But:
+
+```c
+*(S + 3)
+```
+
+tries to read one step after the array. That is outside the array, so the program should not read it.
+
+### Problem 3: Array As A Stored Table
+
+[03problem.c](C-Arrays-practiceSet1/03problem.c) stores the multiplication table of `5` in an array:
+
+```c
+array[i] = 5 * (i + 1);
+```
+
+Here, the array is used as storage first. Then a second loop prints the stored values.
+
+This is different from printing directly because now the values are saved in memory.
+
+### Problem 4: User Input And Fixed Array Size
+
+[04problem.c](C-Arrays-practiceSet1/04problem.c) lets the user choose the table number.
+
+The array has only `10` elements:
+
+```c
+int array[10];
+```
+
+So the code keeps `times` within `10`:
+
+```c
+if (times > 10)
+    times = 10;
+```
+
+This avoids writing outside the array.
+
+Beginner rule:
+
+```text
+If array size is fixed, loop limit must stay inside that size.
+```
+
+### Problem 5: Reversing An Array
+
+[05problem.c](C-Arrays-practiceSet1/05problem.c) passes an array to a function:
+
+```c
+reverseArray(arr, 5);
+```
+
+The function swaps first with last, second with second-last, and so on:
+
+```text
+12 43 84 97 17
+17 97 84 43 12
+```
+
+The loop uses two indexes:
+
+```c
+for (int i = 0, j = size - 1; i < j; i++, j--)
+```
+
+Here:
+
+- `i` moves forward
+- `j` moves backward
+- loop stops when they meet or cross
+
+The function receives the array and changes the original array elements.
+
+### Problem 6: Counting Positive Integers
+
+[06problem.c](C-Arrays-practiceSet1/06problem.c) uses a function:
+
+```c
+int countPositive(int arr[], int size)
+```
+
+It checks every element:
+
+```c
+if (arr[i] > 0)
+    count++;
+```
+
+Important detail:
+
+- positive means greater than `0`
+- negative means less than `0`
+- `0` is neither positive nor negative
+
+So in:
+
+```c
+{123, 56, -32, 0, -12, 76, -97}
+```
+
+positive values are:
+
+```text
+123, 56, 76
+```
+
+Count is `3`.
+
+### Problem 7: 2D Array For Multiple Tables
+
+[07problem.c](C-Arrays-practiceSet1/07problem.c) uses:
+
+```c
+int arr[3][10];
+```
+
+Think of this as:
+
+```text
+3 rows, 10 columns
+```
+
+Each row stores one multiplication table:
+
+```text
+row 0 -> table of 2
+row 1 -> table of 7
+row 2 -> table of 9
+```
+
+The helper array:
+
+```c
+int numbers[3] = {2, 7, 9};
+```
+
+keeps the code shorter because `numbers[i]` gives the table number for row `i`.
+
+### Problem 8: Custom 2D Tables
+
+[08problem.c](C-Arrays-practiceSet1/08problem.c) repeats the same idea, but table numbers come from the user:
+
+```c
+int num[3];
+```
+
+The table storage is still:
+
+```c
+int arr[3][10];
+```
+
+So there are still only `10` columns per row. That is why `times` is kept within `10`.
+
+### Problem 9: 3D Array Addresses
+
+[09problem.c](C-Arrays-practiceSet1/09problem.c) prints addresses of:
+
+```c
+int arr[2][3][4];
+```
+
+The nested loops print addresses in this order:
+
+```text
+arr[0][0][0]
+arr[0][0][1]
+arr[0][0][2]
+arr[0][0][3]
+arr[0][1][0]
+...
+```
+
+This shows row-major order again.
+
+The last index changes fastest:
+
+```text
+[0][0][0], [0][0][1], [0][0][2], [0][0][3]
+```
+
+Then the middle index changes:
+
+```text
+[0][1][0]
+```
+
+Then finally the first index changes:
+
+```text
+[1][0][0]
+```
+
 ## Important Points
 
 - An array stores multiple values of the same type.
@@ -774,6 +1045,11 @@ The last index moves first. Then row changes. Then block changes.
 - Multidimensional arrays are also stored continuously.
 - C stores multidimensional arrays in row-major order.
 - The rightmost index changes fastest in memory.
+- `*(arr + i)` and `arr[i]` reach the same element.
+- `*(S + 3)` is the fourth element location, not the third.
+- For an array of size `3`, index `3` is outside the array.
+- When using user input as loop limit, keep it inside the array size.
+- A function can modify original array elements because array access reaches the same memory.
 
 ## Summary
 
@@ -787,3 +1063,5 @@ The last index moves first. Then row changes. Then block changes.
 - `ptr++` moves to the next array element according to pointer type.
 - A 2D array like `arr2[2][3]` is stored row by row in memory.
 - A 3D array like `arr3[2][3][2]` is stored block by block, row by row, column by column.
+- A 2D array can store multiple related lists, such as several multiplication tables.
+- A 3D array is still stored continuously; it just needs more indexes to access one value.
