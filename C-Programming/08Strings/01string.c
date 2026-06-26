@@ -1,14 +1,14 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
+    // A string in C is a char array that ends with '\0'.
+    char s[] = {'H', 'E', 'L', 'L', 'O', '\0'};
 
-    //Two types of initialiazation
-    
-    char s[] = {'H', 'E', 'L', 'L', 'O', '\0'}; //'\0' is added at the end to turn it into string
-    char s2[] = {"WORLD!"}; //In this case '\0' automatically added
+    // In double quotes, C adds '\0' automatically.
+    char s2[] = "WORLD!";
 
     printf("%s ", s);
-    printf("%s", s2);
+    printf("%s\n", s2);
 
     return 0;
 }

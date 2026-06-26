@@ -1,11 +1,16 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
     char name[100];
-    printf("Enter name: ");
-    fgets(name, 10, stdin); //takes input 1 less since stores '\0' in the end
 
-    printf("%s\n", name);   //Hey GPT you take care of the use of printf and puts for string    though both work fine
+    printf("Enter name: ");
+    // fgets reads at most size - 1 characters, then stores '\0'.
+    fgets(name, 10, stdin);
+
+    // printf prints exactly what we ask. Here we manually add '\n'.
+    printf("%s\n", name);
+
+    // puts prints the string and then adds a newline by itself.
     puts(name);
 
     return 0;

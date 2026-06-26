@@ -1,12 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
 
-int main(){
+int main() {
     char fullName[25];
+
     printf("Enter your name: ");
-    gets(fullName); //though use of gets is stopped(deprecated) and instead fgets is used
+    // gets() is unsafe and removed from modern C, so fgets() is used instead.
+    fgets(fullName, 25, stdin);
+
+    // fgets may store the Enter key as '\n'. This removes it if present.
+    fullName[strcspn(fullName, "\n")] = '\0';
 
     printf("Your name is ");
-    puts(fullName); //in the end add '\n' is added automatically
+    puts(fullName); // puts prints the string and adds '\n' automatically.
 
     return 0;
 }

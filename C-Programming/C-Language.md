@@ -13,6 +13,7 @@ Parent: [Programming](../Programming.md)
 5. [C Functions And Recursion](05Function&Recursion/C-Function-Recursion.md) - functions, prototypes, parameters, return values, library functions, and recursion
 6. [C Pointers](06Pointers/C-Pointers.md) - addresses, pointer variables, dereferencing, pointer levels, function calls with addresses, and swapping values
 7. [C Arrays](07Arrays/C-Arrays.md) - storing multiple values, indexes, memory layout, pointer access, function passing, and multidimensional arrays
+8. [C Strings](08Strings/C-Strings.md) - character arrays, null terminator, string input/output, string pointers, and common string library functions
 
 Each chapter note links to its related code and problem sets.
 

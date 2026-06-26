@@ -1,14 +1,19 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
     char str[] = "Cant be re-initialized";
+    printf("Array string: %s\n", str);
 
-    char *canChange;  //can be reinitialized if initialized using pointer
+    // A pointer can point to one string literal, then later point to another.
+    char *canChange;
     canChange = "Karanjit";
 
-    printf("original string: %s\n", canChange);
+    printf("Original pointer string: %s\n", canChange);
+
     canChange = "Paul";
-    printf("Re-initialized string: %s", canChange);
+    printf("Re-initialized pointer string: %s\n", canChange);
+
+    // str = "New text"; would not work because array name cannot be reassigned.
 
     return 0;
 }

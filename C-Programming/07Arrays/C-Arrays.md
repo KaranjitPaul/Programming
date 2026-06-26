@@ -2,7 +2,7 @@
 
 Parent: [C Language](../C-Language.md)  
 Previous: [C Pointers](../06Pointers/C-Pointers.md)  
-Next: None
+Next: [C Strings](../08Strings/C-Strings.md)
 
 An array stores multiple values of the same type under one name. Instead of creating many separate variables like `mark1`, `mark2`, `mark3`, an array lets us store related values together and access them using indexes.
 
