@@ -6,6 +6,8 @@ int main(){
     printf("Enter string: ");
     fgets(source, 30, stdin);
 
-    
+    strcpy(target, source);
+    printf("String: %s", target);
+
     return 0;
 }
