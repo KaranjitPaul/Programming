@@ -16,6 +16,13 @@ Practice files:
 - [String length using strlen](06strlen.c)
 - [Copy string using strcpy](07strcpy.c)
 - [Join strings using strcat](08strcat.c)
+- [Compare strings using strcmp](09strcmp.c)
+
+Practice set:
+
+- [Problem 1: Build string using `%c`](C-String-practiceSet1/01problem.c)
+- [Problem 2: Custom strlen](C-String-practiceSet1/02problem.c)
+- [Problem 3: Slice a string](C-String-practiceSet1/03problem.c)
 
 ## Contents
 
@@ -34,6 +41,8 @@ Practice files:
 - [`strlen`](#strlen)
 - [`strcpy`](#strcpy)
 - [`strcat`](#strcat)
+- [`strcmp`](#strcmp)
+- [Practice Set Concepts](#practice-set-concepts)
 - [Buffer Size And Safety](#buffer-size-and-safety)
 - [Important Points](#important-points)
 - [Summary](#summary)
@@ -551,6 +560,159 @@ Karanjit\0
 
 There is no extra space for `" Paul"`.
 
+## `strcmp`
+
+[09strcmp.c](09strcmp.c) uses:
+
+```c
+strcmp("far", "joke");
+```
+
+`strcmp` compares two strings character by character.
+
+It returns:
+
+| Return | Meaning |
+| --- | --- |
+| negative value | first string comes before second string |
+| `0` | both strings are equal |
+| positive value | first string comes after second string |
+
+The comparison is based on character values, usually ASCII.
+
+Example:
+
+```c
+strcmp("far", "joke")
+```
+
+compares first character first:
+
+```text
+'f' and 'j'
+```
+
+Since `'f'` comes before `'j'`, the result is negative.
+
+For:
+
+```c
+strcmp("far", "far")
+```
+
+both strings are equal, so result is:
+
+```text
+0
+```
+
+Important: do not depend on the exact returned number. Only care whether it is negative, zero, or positive.
+
+## Practice Set Concepts
+
+### Problem 1: Building A String With `%c`
+
+[01problem.c](C-String-practiceSet1/01problem.c) takes characters one by one and stores them in a character array.
+
+The important idea is:
+
+```c
+chStr[5] = '\0';
+```
+
+After storing characters manually, we must add `'\0'` ourselves. Without it, `%s` will not know where the string ends.
+
+### Problem 2: Custom `strlen`
+
+[02problem.c](C-String-practiceSet1/02problem.c) counts characters until `'\0'`.
+
+Core idea:
+
+```c
+for (int i = 0; str[i] != '\0'; i++)
+```
+
+This is exactly how string length works conceptually:
+
+```text
+keep counting until the null character is found
+```
+
+If the input came from `fgets`, remember that newline `\n` may also be counted unless removed.
+
+### Problem 3: Slicing A String
+
+[03problem.c](C-String-practiceSet1/03problem.c) tries to change the original string into only the selected part.
+
+If:
+
+```text
+string = "Karanjit"
+m = 2
+n = 5
+```
+
+then the slice is:
+
+```text
+ranj
+```
+
+The function creates a temporary string:
+
+```c
+char temp[20];
+```
+
+Then it copies characters from the original string into `temp`:
+
+```c
+for (int j = 0; m <= n; j++)
+    temp[j] = ch[m++];
+```
+
+Here two positions are being used:
+
+- `m` points to the current character in the original string
+- `j` points to the current position in the sliced string
+
+So if `m = 2` and `n = 5`, the loop works like:
+
+```text
+temp[0] = ch[2]
+temp[1] = ch[3]
+temp[2] = ch[4]
+temp[3] = ch[5]
+```
+
+The `m++` part means:
+
+```text
+use ch[m], then increase m for the next character
+```
+
+After copying, the sliced string needs `'\0'` at the end. In the current code this part is written as:
+
+```c
+temp[m] = '\0';
+```
+
+The intention is correct: end the temporary string before copying it back. But the index used for ending should match the temporary string position, not the original string position.
+
+The idea to remember is:
+
+```c
+temp[where_the_slice_ends] = '\0';
+```
+
+Then the sliced string is copied back:
+
+```c
+strcpy(ch, temp);
+```
+
+So the original string changes because `strcpy` writes the temporary sliced string back into `ch`.
+
 ## Buffer Size And Safety
 
 A buffer is just an area of memory used to store data.
@@ -590,8 +752,11 @@ Important habits:
 - `strlen` counts characters before `'\0'`.
 - `strcpy` copies one string into another.
 - `strcat` joins one string at the end of another.
+- `strcmp` compares strings and returns negative, zero, or positive.
 - Array strings cannot be reassigned as a whole.
 - String pointers can point to different string literals.
+- If you build a string manually, add `'\0'` yourself.
+- A sliced string must also end with `'\0'`.
 
 ## Summary
 
@@ -605,3 +770,5 @@ Important habits:
 - `strlen(name)` gives the string length before `'\0'`.
 - `strcpy(target, source)` copies a string.
 - `strcat(first, second)` joins `second` at the end of `first`.
+- `strcmp(first, second)` compares two strings.
+- A slice function can copy selected characters into a temporary string, add `'\0'`, then copy it back.
